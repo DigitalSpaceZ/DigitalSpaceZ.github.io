@@ -4,12 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>DigitalSpaceZ</title>
+<!-- 预加载关键资源 -->
+<link rel="preload" href="https://cdn.jsdelivr.net/gh/DigitalSpaceZ/DigitalSpaceZ.github.io/avatar.webp" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.simpleicons.org" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- 添加更好看的展示字体 -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
   <!-- 优雅衬线字体，用于显示名字 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <style>
   /* 添加淡入动画 */
@@ -148,10 +151,20 @@
     .socials {
       gap: 12px;
       margin-bottom: 30px;
+      max-width: 280px; /* 限制宽度确保每行3个图标 */
     }
     .socials a {
       width: 44px;
       height: 44px;
+    }
+    /* 统一LinkedIn图标大小 */
+    .social-link.linkedin {
+      width: 44px;
+      height: 44px;
+    }
+    .social-link.linkedin svg {
+      width: 20px;
+      height: 20px;
     }
     .socials img {
       width: 24px;
@@ -243,11 +256,12 @@
 <body>
 
 <div class="avatar" style="animation: fadeInUp 0.6s ease-out 0.2s both;">
-  <img src="https://github.com/DigitalSpaceZ/DigitalSpaceZ.github.io/blob/main/avatar.png?raw=true" 
+  <img src="https://cdn.jsdelivr.net/gh/DigitalSpaceZ/DigitalSpaceZ.github.io/avatar.webp" 
        alt="DS avatar" 
        style="width:100%;height:100%;border-radius:50%;object-fit:cover;"
-       loading="lazy"
+       loading="eager"
        decoding="async"
+       fetchpriority="high"
        onload="this.classList.add('loaded')">
 </div>
 <div class="name" style="animation: fadeInUp 0.6s ease-out 0.4s both;">DigitalSpaceZ</div>
